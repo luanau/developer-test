@@ -1,5 +1,12 @@
-﻿@{
+﻿@model OrangeBricks.Web.Controllers.Home.ViewModels.HomePageViewModel
+
+@{
     ViewBag.Title = "Home Page";
+}
+
+@if (User.IsInRole("Buyer") && Model.HasAcceptedOffer)
+{
+    <div class="notification">GOOD NEWS! Your offer has been accepted!</div>
 }
 
 <div class="jumbotron">
